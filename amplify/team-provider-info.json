@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-traveldiary-dev-0b289-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590184003582:role/amplify-traveldiary-dev-0b289-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590184003582:role/amplify-traveldiary-dev-0b289-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-traveldiary-dev-0b289-deployment",
+      "UnauthRoleName": "amplify-traveldiary-dev-0b289-unauthRole",
+      "StackName": "amplify-traveldiary-dev-0b289",
+      "StackId": "arn:aws:cloudformation:eu-north-1:590184003582:stack/amplify-traveldiary-dev-0b289/6ea9f9b0-040b-11f0-9c95-0ea23ad4b561",
+      "AmplifyAppId": "d1h31f2jfyd5md"
+    },
+    "categories": {
+      "auth": {
+        "traveldiary9b77b31d": {}
+      },
+      "api": {
+        "traveldiary": {}
+      },
+      "storage": {
+        "bucket": {}
+      }
+    }
+  }
+}

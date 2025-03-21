@@ -1,0 +1,14 @@
+{
+  "resourceName": "bucket",
+  "policyUUID": "53d4909a",
+  "bucketName": "traveldiaryc2190450f5704611af38a60555f3ea1b",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

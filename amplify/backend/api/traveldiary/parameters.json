@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "traveldiary",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authtraveldiary9b77b31d",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
