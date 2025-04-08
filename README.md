@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Cloud-Powered Travel Diaries: A Full-Stack Amplify React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-stack travel diary web application developed using AWS Amplify and React.js. The application enables users to register, log in, and create travel entries with descriptions and images. Leveraging AWS cloud services, this system demonstrates a serverless architecture to improve scalability, security, and performance while minimizing backend complexities.
 
-## Available Scripts
+# Features
+1. User Registration and Authentication: Secure sign-up, sign-in, and session management using AWS Cognito.
 
-In the project directory, you can run:
+2. Travel Entries Management: Users can create, save, and view travel journal entries.
 
-### `npm start`
+3. Image Upload and Storage: Upload travel images to Amazon S3 and render them in the UI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. GraphQL API Integration: Efficient data communication between frontend and backend via AWS AppSync.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Database Storage: DynamoDB stores travel entry details such as place, description, and image URLs.
 
-### `npm test`
+6. Serverless Deployment: Hosted on AWS Amplify with auto-scaling and minimal infrastructure management.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Technology Stack
+Frontend: React.js
 
-### `npm run build`
+Backend: AWS Amplify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Authentication: AWS Cognito
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+API: AWS AppSync (GraphQL)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Database: Amazon DynamoDB (NoSQL)
 
-### `npm run eject`
+Storage: Amazon S3
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Architecture Overview
+The system follows a serverless, cloud-native architecture:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+User authentication is handled by AWS Cognito User Pools.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Frontend built with React interacts with the backend via GraphQL API calls using AWS AppSync.
 
-## Learn More
+Travel data is stored in DynamoDB, while images are uploaded and stored in S3.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+IAM roles manage secure access and permissions across services.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](image.png)
 
-### Code Splitting
+# Installation & Setup
+## Prerequisites
+AWS Account
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Node.js and npm installed
 
-### Analyzing the Bundle Size
+AWS Amplify CLI installed globally:
+```bash
+npm install -g @aws-amplify/cli
+amplify configure
+```
+# Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Clone the repository:
+```bash
+git clone <your-repository-url>
+cd <project-directory>
+```
 
-### Making a Progressive Web App
+Initialize Amplify:
+```bash
+amplify init
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Add AWS Services:
+```bash
+amplify add auth
+amplify add api
+amplify add storage
+amplify push
+```
 
-### Advanced Configuration
+Install dependencies:
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Start the React App:
+```bash
+npm start
+```
 
-### Deployment
+# Key Functionalities
+## Authentication
+Implemented using AWS Cognito for user sign-up, sign-in, and sign-out.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Amplify UI components integrated with React.
 
-### `npm run build` fails to minify
+## Travel Journal Entry
+Users can add new travel stories with location, description, and images.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Images are uploaded to S3 and linked in DynamoDB.
+
+## Data Fetching & Display
+Travel entries are fetched from DynamoDB via GraphQL queries.
+
+Entries are displayed dynamically in the UI with uploaded images.
